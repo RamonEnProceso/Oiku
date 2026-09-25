@@ -2,48 +2,74 @@
 
 ## Backend
 
-### Lenguaje - Python
-Python es un lenguaje ampliamente utilizado en el machine learning y analisis de datos. La idea es utilizarlo en mi backend para procesar y organizar los datos, generar predicciones y realizar análisis estadísticos.
+> FastAPI + SQLAlchemy + PostgreSQL
 
-### Dependencias
+### Structure
 
-*Se inicia el entorno virtual*
->`python -m venv venv`
+```text
 
-*Se instalan con el "requeriments.txt" en la terminal*
->`pip install -r requirements.txt`
+app/
+├── main.py           # Entry point: creates the FastAPI app and mounts the routers
+├── requirements.txt  # Project dependencies
+├── core/             # Configuration: environment variables, settings, DB URL
+├── db/               # Database connection (Base, engine, session)
+├── models/           # SQLAlchemy models (ORM): one class per table
+├── schemas/          # Pydantic schemas: validate input/output data
+├── routers/          # API endpoints (routes), one per resource
+└── services/         # Business logic: queries, analysis, and algorithms
+
+```
+
+### Language - Python
+
+Python is a widely used language in machine learning and data analysis. The idea is to use it in my backend to process and organize data, generate predictions, and perform statistical analysis.
+
+### Dependencies
+
+The virtual environment is created with:-
+
+> `python -m venv venv`
+
+Dependencies are installed from `requirements.txt` in the terminal:-
+
+> `pip install -r requirements.txt`
 
 #### Backend
 
 - FastAPI
-	> Backend
-- Uvicorn
-	> Servidor Web
-- Psycopg
-	> Adaptador PostgreSQL
-- Sqlalchemy
-	> Interactuar con el SQL con POO
-- Pydantic
-	> Validación de información entre front y back
-- Python-dotnenv
-	> Leer .env
+  > Backend framework
 
-##### Algoritmos
+- Uvicorn
+  > Web server
+
+- Psycopg
+  > PostgreSQL adapter
+
+- SQLAlchemy
+  > Interact with SQL databases using OOP
+
+- Pydantic
+  > Data validation between the frontend and backend
+
+- python-dotenv
+  > Load `.env` environment variables
+
+##### Algorithms
 
 - Pandas
-    > Manipulación masiva de datos
+  > Large-scale data manipulation
 
-- Numpy
-    > Cálculos numéricos y manejo de arrays y matrices.
+- NumPy
+  > Numerical computations and array/matrix handling
 
 - Scikit-learn
-    > Machine Learning para clasificar datos y detectar anomalías.
+  > Machine learning for data classification and anomaly detection
 
-- Scipy
-    > Cálculos científicos, estadísticos y optimización.
+- SciPy
+  > Scientific and statistical computing and optimization
 
 - Joblib
-    > Guardar y cargar modelos ya entrenados.
+  > Save and load pre-trained models
 
 - Statsmodels
-    > Modelos estadísticos de series temporales, para la predicción de gastos futuros
+  > Statistical time-series models for predicting future expenses
