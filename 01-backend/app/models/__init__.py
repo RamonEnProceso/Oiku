@@ -4,6 +4,7 @@ from app.db.base import Base
 from .bills import Bills
 from .subcategory import Subcategory
 from .category import Category
+from .account import Account
 
 __all__ = [
     "Bills",
