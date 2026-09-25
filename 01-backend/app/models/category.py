@@ -2,8 +2,6 @@ from app.db.base import Base
 from sqlalchemy.orm import Mapped
 from sqlalchemy.orm import mapped_column
 from sqlalchemy.orm import relationship
-from sqlalchemy import ForeignKey
-from sqlalchemy import Boolean
 from sqlalchemy import String
 
 from typing import TYPE_CHECKING
