@@ -1,5 +1,5 @@
 from fastapi import FastAPI
-from app.routers.gastos import router as router_gastos
+from app.routers.bills import router as router_bills
 
 app = FastAPI()
 
@@ -7,4 +7,4 @@ app = FastAPI()
 def read_root():
     return {"status":"online"}
 
-app.include_router(router_gastos)
+app.include_router(router_bills)
