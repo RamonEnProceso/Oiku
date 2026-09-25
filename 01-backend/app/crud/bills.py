@@ -9,7 +9,7 @@ def create_bill(db: Session, bill: BillCreate):
         account_id = bill.account,
         amount = bill.amount,
         description = bill.description,
-        ocurred_at = bill.ocurred_at,
+        occurred_at = bill.occurred_at,
         created_at = bill.created_at,
         updated_at = bill.updated_at
     )

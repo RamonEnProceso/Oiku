@@ -7,7 +7,7 @@ class BillCreate(BaseModel):
     account: int
     amount: Decimal
     description: str | None = None
-    ocurred_at: datetime
+    occurred_at: datetime
     created_at: datetime
     updated_at: datetime
     
@@ -16,7 +16,7 @@ class BillUpdate(BaseModel):
     account: int | None = None
     amount: Decimal | None = None
     description: str | None = None
-    ocurred_at: datetime | None = None
+    occurred_at: datetime | None = None
     updated_at: datetime
     
 class BillResponse(BaseModel):
@@ -28,7 +28,7 @@ class BillResponse(BaseModel):
     account: int
     amount: Decimal
     description: str | None = None
-    ocurred_at: datetime
+    occurred_at: datetime
     created_at: datetime
     updated_at: datetime
     
