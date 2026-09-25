@@ -25,7 +25,7 @@ def get_bills(db:Session):
 def get_bill(db:Session, bill_id: int):
     return db.get(Bills, bill_id)
 
-def update_cliente(db:Session, bill: BillUpdate, bill_id: int):
+def update_bill(db:Session, bill: BillUpdate, bill_id: int):
     billDB = db.get(Bills, bill_id)
     if billDB is None:
         return None
