@@ -10,11 +10,12 @@ class SubcategoryUpdate(BaseModel):
     category_id : int | None = None
     mindless_spending : bool | None = None
     
-class SubcategorResponse(BaseModel):
+class SubcategoryResponse(BaseModel):
     model_config = ConfigDict(
         from_attributes=True
     )
-    
+
+    id: int
     name: str
     category_id : int
     mindless_spending : bool
