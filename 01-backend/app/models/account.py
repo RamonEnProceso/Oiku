@@ -14,7 +14,7 @@ class Account(Base):
     id: Mapped[int] = mapped_column(primary_key=True) 
     name : Mapped[str] = mapped_column(String)
     
-    bills : Mapped[list["Bills"]] = relationship("Bills", back_populates="bills_account")
+    bills : Mapped[list["Bills"]] = relationship("Bills", back_populates="account")
     
     def __repr__(self):
         return f"Account(id={self.id}, name='{self.name}')"

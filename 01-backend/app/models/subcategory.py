@@ -19,8 +19,8 @@ class Subcategory(Base):
     name : Mapped[str] = mapped_column(String)
     mindless_spending : Mapped[bool] = mapped_column(Boolean)
     
-    category : Mapped ["Category"] = relationship("Category", back_populates="bills_category")
-    bills : Mapped[list["Bills"]] = relationship("Bills", back_populates="bills_category")
+    category : Mapped ["Category"] = relationship("Category", back_populates="subcategories")
+    bills : Mapped[list["Bills"]] = relationship("Bills", back_populates="subcategory")
     
     def __repr__(self):
         return f"Subcategory(id={self.id}, name='{self.name}', category={self.category.name})"

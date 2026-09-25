@@ -22,7 +22,7 @@ class Bills(Base):
     account_id : Mapped[int] = mapped_column(ForeignKey("bills_account.id"), nullable=False)
     amount : Mapped[Decimal] = mapped_column(Numeric(12,2), nullable=False)
     description : Mapped[str] = mapped_column(String)
-    ocurred_at : Mapped[datetime] = mapped_column(TIMESTAMP, server_default=func.now(), nullable=False)
+    occurred_at : Mapped[datetime] = mapped_column(TIMESTAMP, server_default=func.now(), nullable=False)
     created_at : Mapped[datetime] = mapped_column(TIMESTAMP, server_default=func.now(), nullable=False)
     updated_at : Mapped[datetime] = mapped_column(TIMESTAMP, server_default=func.now(), nullable=False)
     

@@ -14,7 +14,7 @@ class Category(Base):
     id: Mapped[int] = mapped_column(primary_key=True) 
     name : Mapped[str] = mapped_column(String)
     
-    subcategories : Mapped[list["Subcategory"]] = relationship("Subcategory", back_populates="bills_subcategory")
+    subcategories : Mapped[list["Subcategory"]] = relationship("Subcategory", back_populates="category")
     
     def __repr__(self):
         return f"Category(id={self.id}, name='{self.name}')"
