@@ -7,12 +7,12 @@
 ### SQL CRUD
 
 - [x] Design Database
-- [ ] Set up `Docker` with `PostgreSQL`
+- [x] Set up `Docker` with `PostgreSQL`
 
 #### Basic Backend
-- [ ] Set up virtual environment
-- [ ] Choose which libraries to install
-- [ ] Create models with `SQLAlchemy`
+- [x] Set up virtual environment
+- [x] Choose which libraries to install
+- [x] Create models with `SQLAlchemy`
 - [ ] Create functions to manage `SQL Tables`
     - [ ] Create
     - [ ] Read
