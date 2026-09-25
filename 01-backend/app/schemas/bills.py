@@ -23,9 +23,10 @@ class BillResponse(BaseModel):
     model_config = ConfigDict(
         from_attributes=True
     )
-    
-    subcategory: int
-    account: int
+
+    id: int
+    subcategory_id: int
+    account_id: int
     amount: Decimal
     description: str | None = None
     occurred_at: datetime
