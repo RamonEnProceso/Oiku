@@ -46,5 +46,9 @@ VALUES
   (23, 10, 'Electric bill', FALSE),
   (24, 10, 'Water bill', FALSE);
 
+SELECT setval(pg_get_serial_sequence('bills_account', 'id'), (SELECT MAX(id) FROM bills_account));
+SELECT setval(pg_get_serial_sequence('bills_category', 'id'), (SELECT MAX(id) FROM bills_category));
+SELECT setval(pg_get_serial_sequence('bills_subcategory', 'id'), (SELECT MAX(id) FROM bills_subcategory));
+
 SET CONSTRAINTS ALL IMMEDIATE;
 COMMIT;
