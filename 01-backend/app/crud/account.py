@@ -41,3 +41,10 @@ def delete_account (db: Session, account_id:int):
     db.delete(account)
     db.commit()
     return True
+
+def get_account_bills (db: Session, account_id:int):
+    account = db.get(Account, account_id)
+    if account is None:
+        return None
+    
+    return account.bills
