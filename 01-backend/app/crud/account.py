@@ -20,11 +20,11 @@ def get_account(db:Session, account_id: int):
     return db.get(Account, account_id)
 
 def update_account(db:Session, account_id: int, account: AccountUpdate):
-    accountDB = db.get(account, account_id)
+    accountDB = db.get(Account, account_id)
     if accountDB is None:
         return None
 
-    updated_data = Account.model_dump(exclude_unset=True)
+    updated_data = account.model_dump(exclude_unset=True)
    
     for key, value in updated_data.items():
         setattr(accountDB, key, value)
@@ -34,7 +34,7 @@ def update_account(db:Session, account_id: int, account: AccountUpdate):
     return accountDB
         
 def delete_account (db: Session, account_id:int):
-    account = db.get(account, account_id)
+    account = db.get(Account, account_id)
     if account is None:
         return None
     
