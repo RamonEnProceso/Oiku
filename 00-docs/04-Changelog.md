@@ -4,6 +4,11 @@
 ## MVP - v0.1
 
 ### v0.0.1
+- Creation of routes for CRUD of Bills
+    - Bills
+    - Account
+    - Category
+    - Subcategory
 - Creation of Pydantic schemas
     - Bills
     - Account
