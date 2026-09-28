@@ -38,6 +38,13 @@ def delete_category (db: Session, category_id:int):
     if category is None:
         return None
     
+    subcategories = category.subcategories
+    
+    if subcategories is not None:
+        for subcategory in subcategories:
+                db.delete(subcategory)
+                db.commit()
+    
     db.delete(category)
     db.commit()
     return True
