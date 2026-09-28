@@ -13,11 +13,30 @@
 - [x] Set up virtual environment
 - [x] Choose which libraries to install
 - [x] Create models with `SQLAlchemy`
-- [ ] Create functions to manage `SQL Tables`
-    - [ ] Create
-    - [ ] Read
-    - [ ] Update
-    - [ ] Delete
+- [x] Create functions to manage `SQL Tables`
+    - [x] Bills
+        - [x] Create
+        - [x] Read
+        - [x] Update
+        - [x] Delete
+    - [x] Account
+        - [x] Create
+        - [x] Read
+        - [x] Update
+        - [x] Delete
+    - [x] Category
+        - [x] Create
+        - [x] Read
+        - [x] Update
+        - [x] Delete
+        - [x] Get Subcategories
+    - [x] Subcategory
+        - [x] Create
+        - [x] Read
+        - [x] Update
+        - [x] Delete
+        - [x] Get Category
+
 
 ### Import CSVs into SQL
 
