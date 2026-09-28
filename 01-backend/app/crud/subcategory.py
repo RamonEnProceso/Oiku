@@ -1,7 +1,7 @@
 from sqlalchemy import select
 from sqlalchemy.orm import Session
 from app.models import Subcategory
-from app.schemas.category import SubcategoryCreate, SubcategoryUpdate
+from app.schemas.subcategory import SubcategoryCreate, SubcategoryUpdate
 
 def create_subcategory(db: Session,subcategory: SubcategoryCreate):
     subcategoryDB = Subcategory(
