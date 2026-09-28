@@ -5,7 +5,9 @@ from app.schemas.subcategory import SubcategoryCreate, SubcategoryUpdate
 
 def create_subcategory(db: Session,subcategory: SubcategoryCreate):
     subcategoryDB = Subcategory(
-        name =subcategory.name
+        name =subcategory.name,
+        category_id = subcategory.category_id,
+        mindless_spending = subcategory.mindless_spending,
     )
     db.add(subcategoryDB)
     db.commit()
