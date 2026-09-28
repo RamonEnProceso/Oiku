@@ -21,7 +21,7 @@ VALUES
   (10, 'Utilities');
 INSERT INTO "bills_subcategory" ("id", "category_id", "name", "mindless_spending")
 VALUES
-  (1, 1, 'Mom''s money', FALSE),
+  (1, 1, 'Family''s money', FALSE),
   (2, 1, 'Earnings', FALSE),
   (3, 2, 'CEDEARs', FALSE),
   (4, 2, 'USDs', FALSE),
@@ -44,8 +44,9 @@ VALUES
   (21, 10, 'Internet bill', FALSE),
   (22, 10, 'Gas bill', FALSE),
   (23, 10, 'Electric bill', FALSE),
-  (24, 10, 'Water bill', FALSE);
-  (25, 10, 'Charge', FALSE);
+  (24, 10, 'Water bill', FALSE),
+  (25, 10, 'Charge', FALSE),
+  (26, 6, 'Supermarket', FALSE);
 
 SELECT setval(pg_get_serial_sequence('bills_account', 'id'), (SELECT MAX(id) FROM bills_account));
 SELECT setval(pg_get_serial_sequence('bills_category', 'id'), (SELECT MAX(id) FROM bills_category));
