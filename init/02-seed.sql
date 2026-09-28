@@ -45,6 +45,7 @@ VALUES
   (22, 10, 'Gas bill', FALSE),
   (23, 10, 'Electric bill', FALSE),
   (24, 10, 'Water bill', FALSE);
+  (25, 10, 'Charge', FALSE);
 
 SELECT setval(pg_get_serial_sequence('bills_account', 'id'), (SELECT MAX(id) FROM bills_account));
 SELECT setval(pg_get_serial_sequence('bills_category', 'id'), (SELECT MAX(id) FROM bills_category));
