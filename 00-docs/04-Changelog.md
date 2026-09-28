@@ -4,7 +4,7 @@
 ## MVP - v0.1
 
 ### v0.0.1
-- Creation of routes for CRUD of Bills
+- Creation of routes for CRUD of:
     - Bills
     - Account
     - Category
