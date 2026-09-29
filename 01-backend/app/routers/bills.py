@@ -4,7 +4,7 @@ from app.schemas.bills import BillResponse, BillCreate, BillUpdate
 from app.schemas.subcategory import SubcategoryResponse
 from app.schemas.account import AccountResponse
 from sqlalchemy.orm import Session
-from app.crud.bills import get_bills, get_bill, create_bill, update_bill, delete_bill, get_bill_account, get_bill_subcategory
+from app.crud.bills import get_bills, get_bill, create_bill, update_bill, delete_bill, get_bill_account, get_bill_subcategory, delete_all_bills
 
 router = APIRouter(
     prefix="/bills",
@@ -54,6 +54,12 @@ def delete_bill_route(bill_id:int, db:Session = Depends(get_db)):
             )
         
     return {"message":f"Bill n{bill_id} was deleted succesfully"}
+
+@router.delete("/all/")
+def delete_all_bills_route(db:Session = Depends(get_db)):
+    delete_all_bills(db)
+    
+    return {"message":"Bills were deleted succesfully"}
 
 @router.get("/{bill_id}/subcategory", response_model=SubcategoryResponse)
 def get_bill_subcategory_route(bill_id:int, db:Session = Depends(get_db)):
