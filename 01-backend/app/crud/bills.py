@@ -1,4 +1,4 @@
-from sqlalchemy import select
+from sqlalchemy import select, delete
 from sqlalchemy.orm import Session
 from app.models import Bills
 from app.schemas.bills import BillCreate, BillUpdate
@@ -51,6 +51,13 @@ def delete_bill (db: Session, bill_id:int):
     
     db.delete(bill)
     db.commit()
+    return True
+
+def delete_all_bills (db: Session):
+    stmt = delete(Bills)
+    db.execute(stmt)
+    db.commit()
+    
     return True
 
 def get_bill_subcategory(db:Session, bill_id:int):
