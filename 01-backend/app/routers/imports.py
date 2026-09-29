@@ -1,4 +1,6 @@
 from fastapi import APIRouter, Depends, HTTPException, UploadFile
+from app.services.csv.read import readFile
+from app.services.csv.csvIntoSQL import csvIntoSQLES
 from sqlalchemy.orm import Session
 from app.db.dependencies import get_db
 
@@ -7,12 +9,11 @@ router = APIRouter(
     tags=["Import"]
 )
 
-@router.post("/csv/")
-def import_csv_route(file:UploadFile):
+@router.post("/csv/es/")
+def import_csv_es_route(file:UploadFile, db:Session = Depends(get_db)):
     if file.content_type != "text/csv":
         raise HTTPException(
                     status_code=406,
-                    detail="File is not a CSV"
-                )
+                    detail="File is not a CSV")
     
-    return {"type":file.content_type}
+    return csvIntoSQLES(file, db)
