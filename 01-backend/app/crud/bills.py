@@ -2,6 +2,7 @@ from sqlalchemy import select, delete
 from sqlalchemy.orm import Session
 from app.models import Bills
 from app.schemas.bills import BillCreate, BillUpdate
+from datetime import datetime
 
 def create_bill(db: Session, bill: BillCreate):
     billDB = Bills(
@@ -20,6 +21,32 @@ def create_bill(db: Session, bill: BillCreate):
 
 def get_bills(db:Session):
     stmt = select(Bills)
+    return db.execute(stmt).scalars().all()
+
+def get_bills_month(db:Session, year:int, month:int):
+    start = datetime(year, month, 1)
+
+    if month == 12:
+        end = datetime(year + 1, 1, 1)
+    else:
+        end = datetime(year, month + 1, 1)
+
+    stmt = select(Bills).where(
+        Bills.occurred_at >= start,
+        Bills.occurred_at < end
+    )
+
+    return db.execute(stmt).scalars().all()
+
+def get_bills_year(db:Session, year:int):
+    start = datetime(year, 1, 1)
+    end = datetime(year + 1 , 1, 1)
+
+    stmt = select(Bills).where(
+        Bills.occurred_at >= start,
+        Bills.occurred_at < end
+    )
+
     return db.execute(stmt).scalars().all()
 
 def get_bill(db:Session, bill_id: int):
