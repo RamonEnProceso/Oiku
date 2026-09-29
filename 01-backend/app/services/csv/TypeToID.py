@@ -3,13 +3,16 @@ from decimal import Decimal
 typeDicc = {
     "Ingreso": {
         "Familia": 1,
-        "Other":2},
+        "Other":2
+    },
     "Alimento": {
         "Snack":8,
-        "FastFood": 7},
+        "FastFood": 7
+    },
     "Transporte":{
         "Ride":10,
-        "SUBE":9},
+        "SUBE":9
+    },
     "Salud": 11,
     "Supermercado": 26,
     "Comisión": 25,
@@ -18,11 +21,13 @@ typeDicc = {
         "Internet": 21,
         "Gas": 22,
         "Luz": 23,
-        "Agua": 24,},
+        "Agua": 24
+    },
     "Entretenimiento":{
         "Cine": 12,
         "Drink": 14,
-        "Fair": 7},
+        "Fair": 7
+    },
     "API": 19,
     "Material":{
         "Universidad": 15,
@@ -30,7 +35,8 @@ typeDicc = {
         "Tech": 17,
         "Ropa": 18,
         "Regalo": 27,
-        "Varios": 28}
+        "Varios": 28
+    }
 }
 
 ## Transporte puede ser Didi o Subte, es Didi si es mayor a $2400
@@ -95,15 +101,15 @@ def convertTypeToID (amount:Decimal, description:str, type: str):
     if(type == "Ingreso"):
         return resolveIngreso(description)
     if(type == "Alimento"):
-        resolveFood(amount)
+        return resolveFood(amount)
     if(type == "Transporte"):
-        return resolveTransporte
+        return resolveTransporte(amount)
     if(type == "Servicios"):
-        resolveServices(description)
+        return resolveServices(description)
     if(type == "Entretenimiento"):
-        resolveEntertaiment(description)
+        return resolveEntertaiment(description)
     if(type == "Material"):
-        resolveMaterial(description)
+        return resolveMaterial(description)
     try:
         return typeDicc[type]
     except:
