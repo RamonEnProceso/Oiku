@@ -40,7 +40,17 @@
 
 ### Import CSVs into SQL
 
-- [ ] Develop `CSV` parser
+- [x] Develop `CSV` parser
+    - [x] Create `import\csv` route (**Only available in spanish**)
+    - [x] Create `CSV` service
+        - [x] Read
+        - [x] Conversor
+            - [x] Type name to id number
+        - [x] Import to SQL
+
+### Shopping cart
+
+- [ ] Every bill have or not a shopping cart
 
 ### Expense Tracking
 
