@@ -17,7 +17,7 @@ class BillUpdate(BaseModel):
     amount: Decimal | None = None
     description: str | None = None
     occurred_at: datetime | None = None
-    updated_at: datetime
+    updated_at: datetime = datetime.now()
     
 class BillResponse(BaseModel):
     model_config = ConfigDict(
