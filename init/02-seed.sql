@@ -9,6 +9,7 @@ VALUES
   (4, 'Cash');
 INSERT INTO "bills_category" ("id", "name")
 VALUES
+  (0, 'Unknown'),
   (1, 'Income'),
   (2, 'Investment'),
   (3, 'Food'),
@@ -21,6 +22,7 @@ VALUES
   (10, 'Utilities');
 INSERT INTO "bills_subcategory" ("id", "category_id", "name", "mindless_spending")
 VALUES
+  (0, 0, 'Unknown', FALSE),
   (1, 1, 'Family''s money', FALSE),
   (2, 1, 'Earnings', FALSE),
   (3, 2, 'CEDEARs', FALSE),
