@@ -11,6 +11,7 @@
         - Convert the `DataFrame` into `Pydantic` models
         - Insert the validated `Pydantic` models into the database
 - Creation of Route and function to delete all Bills
+- Add Route for get Bills by month or year
 
 ### v0.0.1
 - Creation of routes for CRUD of:
