@@ -48,14 +48,6 @@
             - [x] Type name to id number
         - [x] Import to SQL
 
-### Shopping cart
-
-- [ ] Every bill have or not a shopping cart
-
-### Expense Tracking
-
-- [ ] Export accounts to PDF and Markdown
-
 ### Frontend
 
 - [ ] Implement basic API consumption
@@ -86,3 +78,13 @@
     - [ ] By month
     - [ ] By yea
 - [ ] Expenses as a percentage of income
+
+## Stage 3 - ???
+
+### Shopping cart
+
+- [ ] Every bill have or not a shopping cart
+
+### Expense Tracking
+
+- [ ] Export accounts to PDF and Markdown
