@@ -4,7 +4,7 @@ from app.schemas.bills import BillResponse, BillCreate, BillUpdate
 from app.schemas.subcategory import SubcategoryResponse
 from app.schemas.account import AccountResponse
 from sqlalchemy.orm import Session
-from app.crud.bills import get_bills, get_bill, create_bill, update_bill, delete_bill, get_bill_account, get_bill_subcategory, delete_all_bills, get_bills_month, get_bills_year
+from app.crud.bills import get_bills, get_bill, create_bill, update_bill, delete_bill, get_bill_account, get_bill_subcategory, delete_all_bills, get_bills_month, get_bills_year, get_bills_by_range
 
 router = APIRouter(
     prefix="/bills",
@@ -14,6 +14,10 @@ router = APIRouter(
 @router.get("/",response_model=list[BillResponse])
 def get_bills_route(db:Session = Depends(get_db)):
     return get_bills(db)
+
+@router.get("/byrange/{start}_{end}", response_model=list[BillResponse])
+def get_bills_by_range_route(start:str, end:str, db:Session = Depends(get_db)):
+    return get_bills_by_range(db, start, end)
 
 @router.get("/{year}/{month}",response_model=list[BillResponse])
 def get_bills_by_month_route(year:int, month:int, db:Session = Depends(get_db)):

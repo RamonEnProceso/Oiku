@@ -49,6 +49,16 @@ def get_bills_year(db:Session, year:int):
 
     return db.execute(stmt).scalars().all()
 
+def get_bills_by_range(db:Session, start:str, end:str):
+    dateStart = datetime.strptime(start, '%Y-%m-%d')
+    dateEnd = datetime.strptime(end, '%Y-%m-%d')
+    
+    stmt = select(Bills).where(
+        Bills.occurred_at >= dateStart,
+        Bills.occurred_at < dateEnd
+    )
+    return db.execute(stmt).scalars().all()
+
 def get_bill(db:Session, bill_id: int):
     return db.get(Bills, bill_id)
 
