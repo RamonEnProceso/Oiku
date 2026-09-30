@@ -50,7 +50,7 @@ typeDicc = {
 
 def resolveIngreso (description:str):
     if "mamá" in description.lower() or "hermana" in description.lower():
-        return typeDicc["Ingreso"]["Snack"]
+        return typeDicc["Ingreso"]["Familia"]
     else:
         return typeDicc["Ingreso"]["Other"]
 
