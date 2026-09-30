@@ -1,8 +1,9 @@
 import type { Lan } from "../models/Lan";
 import type { Month } from "../models/Month";
 import { monthsAbbr } from "./monthsAbbr";
+import { monthsFull } from "./monthsFull";
 
-type dateFormat = "dd/mm" | "dd/mm/yy" | "dd/mmm";
+type dateFormat = "dd/mm" | "dd/mm/yy" | "dd/mmm" | "mmmm";
 
 export const dateToString = (date: Date, format : dateFormat, lan : Lan) => {
     const day = date.getDate();
@@ -17,5 +18,7 @@ export const dateToString = (date: Date, format : dateFormat, lan : Lan) => {
             return `${dayString}/${monthString}/${year}`
         case "dd/mmm":
             return `${dayString} ${monthsAbbr[lan][monthString]}`
+        case "mmmm":
+            return `${monthsFull[lan][monthString]}`
     }
 }
