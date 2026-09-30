@@ -3,6 +3,10 @@
 
 ## MVP - v0.1
 
+### v0.0.3
+- Basic Bills display in React
+- Creation of basic CRUD APIs in Frontend
+
 ### v0.0.2
 - Creation of CSV functions:
     - Route to import `CSV` data and insert it into the database
