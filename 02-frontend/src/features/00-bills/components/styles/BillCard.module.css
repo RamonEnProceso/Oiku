@@ -1,0 +1,53 @@
+.billCard{
+    max-width: 300px;
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    background-color: var(--element);
+    gap: 20px;
+    border: var(--border);
+    border-radius: var(--card-radius);
+}
+
+.billCardBody, .billCardDate, .billCardAmount{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.billCardBody{
+    align-items: flex-start;
+    width: 150px;
+    text-align: start;
+}
+
+.description{
+    width: 140px;
+    display: block;
+}
+
+.billCardDate{
+    position: relative;
+    width: 40px;
+}
+
+.billCardDate p{
+    width: 25px;
+}
+
+.billCardDate::after{
+    content: "";
+    width: 1px;
+    height: 100%;
+    background-color: var(--text);
+    position: absolute;
+    right: -10px;
+}
+
+.billCardAmount{
+    width: 80px;
+    padding: 10px 0;
+    align-items: flex-start;
+}
