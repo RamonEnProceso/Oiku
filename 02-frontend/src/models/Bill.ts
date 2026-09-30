@@ -4,9 +4,9 @@ export interface Bill{
     account_id: number
     amount: number
     description: string | null
-    occurred_at: Date
-    created_at: Date
-    updated_at: Date
+    occurred_at: string
+    created_at: string
+    updated_at: string
 }
 
 
@@ -15,9 +15,9 @@ export type BillCreate = {
   account: number
   amount: number
   description?: string | null
-  occurred_at: Date
-  created_at: Date
-  updated_at: Date
+  occurred_at: string
+  created_at: string
+  updated_at: string
 }
 
 export type BillUpdate = {
@@ -25,6 +25,6 @@ export type BillUpdate = {
   account?: number
   amount?: number
   description?: string | null
-  occurred_at?: Date
-  updated_at: Date
+  occurred_at?: string
+  updated_at: string
 }
