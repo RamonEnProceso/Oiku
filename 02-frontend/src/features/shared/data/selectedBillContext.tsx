@@ -1,5 +1,5 @@
 import type { ReactNode } from "react";
-import { createContext } from "react";
+import { createContext, useContext } from "react";
 import { useState } from "react";
 import type { Bill } from "../../../models/Bill"
 import type { SetStateAction, Dispatch } from "react";
@@ -18,4 +18,6 @@ const BillProvider = ({ children }: { children: ReactNode }) => {
     return <BillContext.Provider value={value}>{children}</BillContext.Provider>
 }
 
-export {BillProvider, BillContext};
+const useBillContext = () => useContext(BillContext);
+
+export {BillProvider, BillContext, useBillContext};
