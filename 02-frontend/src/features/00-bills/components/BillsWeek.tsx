@@ -6,9 +6,8 @@ import { getWeekFirstLastDay } from "../../../utils/getWeekFirstLastDay";
 import { getBillsByRange } from "../api/read";
 import { ShowBills } from "./ShowBills";
 
-const BillsWeek = ({date}:{date:Date}) => {
+const BillsWeek = ({date, lan}:{date:Date, lan:Lan}) => {
   const [bills, setBills] = useState<Bill[]>([])
-  const lan : Lan = "ES";
 
   const [start, end] = getWeekFirstLastDay(date);
   const startString = dateToString(start,"yyyy-mm-dd",lan);
@@ -24,10 +23,10 @@ const BillsWeek = ({date}:{date:Date}) => {
   </>
 }
 
-const BillsThisWeek = () => {
+const BillsThisWeek = ({lan}:{lan:Lan}) => {
   const now = new Date();
 
-  return <BillsWeek date={now}/>
+  return <BillsWeek date={now} lan={lan}/>
 }
 
 export {BillsWeek, BillsThisWeek}
