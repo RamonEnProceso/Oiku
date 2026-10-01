@@ -16,3 +16,7 @@ export async function getBillsByYear(year: number): Promise<Bill[]> {
 export async function getBillsByMonth(year: number, month: number): Promise<Bill[]> {
   return request<Bill[]>(`/bills/${year}/${month}`)
 }
+
+export async function getBillsByRange(start: string, end:string): Promise<Bill[]> {
+  return request<Bill[]>(`/bills/byrange/${start}_${end}`)
+}
