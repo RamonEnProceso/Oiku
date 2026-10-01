@@ -4,6 +4,7 @@
 ## MVP - v0.1
 
 ### v0.0.3
+- Add Language Context and Hooks to translate the App
 - Basic Bills display in React
 - Creation of basic CRUD APIs in Frontend
 
