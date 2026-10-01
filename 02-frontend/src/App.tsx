@@ -1,16 +1,22 @@
 import {BillsThisWeek} from './features/00-bills/components/BillsWeek.tsx'
 import { CatalogProvider } from './features/shared/data/CategoriesContext.tsx'
-import type { Lan } from './models/Lan.ts'
+import { BillProvider } from './features/shared/data/selectedBillContext.tsx';
+import { LanProvider } from './features/shared/data/lanContext.tsx';
 
 function App() {
-  const lan : Lan = "ES";
   return (
     <>
+      <LanProvider>
       <CatalogProvider>
+      <BillProvider>
         <section>
-          <BillsThisWeek lan={lan}/>
+          
+            <BillsThisWeek/>
+
         </section>
+      </BillProvider>
       </CatalogProvider>
+      </LanProvider>
     </>
   )
 }
