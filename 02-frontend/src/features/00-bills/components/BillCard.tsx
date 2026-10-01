@@ -3,12 +3,11 @@ import { dateToString } from "../../../utils/dateToString";
 import { displayDescription } from "../../../utils/displayDescription";
 import { displayAmount } from "../../../utils/displayAmount";
 import { useCatalog } from "../../shared/data/CategoriesContext";
-import { useContext } from "react";
-import { BillContext } from "../../shared/data/selectedBillContext";
+import { useBillContext } from "../../shared/data/selectedBillContext";
 import styles from "./styles/BillCard.module.css"
 
 const BillCard = ({billData}:{billData:Bill}) => {
-  const setSelectedBill = useContext(BillContext).setSelectedBill;
+  const { setSelectedBill } = useBillContext();
 
   return <>
         <div className={styles.billCard} onClick={()=>{setSelectedBill(billData)}}>

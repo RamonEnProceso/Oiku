@@ -1,8 +1,7 @@
 import type { Month } from "../models/Month";
 import { monthsAbbr } from "./monthsAbbr";
 import { monthsFull } from "./monthsFull";
-import { useContext } from "react";
-import { LanContext } from "../features/shared/data/lanContext";
+import { useLanContext } from "../features/shared/data/lanContext";
 
 type dateFormat = "dd/mm" | "dd/mm/yy" | "dd/mmm" | "mmmm" | "yyyy-mm-dd";
 
@@ -13,7 +12,7 @@ export const dateToString = (date: Date, format : dateFormat) => {
     const monthString = (month >= 10 ? `${month}` : `0${month}`) as Month;
     const year = date.getFullYear();
 
-    const lan = useContext(LanContext).lan;
+    const {lan} = useLanContext();
 
     switch(format){
         case "dd/mm":
